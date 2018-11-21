@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+
+
+    <meta charset="utf-8" />
+    <title>Department of Examinations - Sri Lanka</title>
+    <link rel="shortcut icon" href="http://www.doenets.lk/exam/icons/favicon.ico" />
+    <meta name="keywords" content="Department of Examinations, Sri Lanka, Education, Results, Government" />
+    <link rel="stylesheet" href="http://www.doenets.lk/exam/css/responsivemobilemenu.css?V=8" type="text/css" />
+    <link rel="stylesheet" href="http://www.doenets.lk/exam/css/doenets-styles.css?V=8" type="text/css" />
+    <link rel="stylesheet" href="http://www.doenets.lk/exam/css/responsivestyles.css?V=8" type="text/css" />
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Didact+Gothic" type="text/css" />
+    <script type="text/javascript" src="http://www.doenets.lk/exam/js/responsive-nav.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+
+    <style>
+        th,
+        td {
+            margin: 10px 0;
+            border: solid 1px #333;
+            padding: 2px 4px;
+            font: 15px Verdana;
+        }
+
+        th {
+            font-weight: bold;
+        }
+    </style>
+
+</head>
+
+<!-- BEGIN BODY -->
+
+<body ng-app="" style="margin:0px !important;" ng-init="table=false">
+    <a href="#nav" class="nav-toggle">Menu</a>
+    <div role="navigation" id="foo" class="nav-collapse">
+
+        <ul>
+            <li style="margin: 12px 0; " id="lilogo">
+                <img src="http://www.doenets.lk/exam/images/gov_logo1.png" style="height: 100px;" alt="Department of Examinations"
+                    title="Department of Examinations" class="Centre" />
+            </li>
+            <li>
+                <a style="border-left: 0px !important;" href="home.html" title="Home">Home</a>
+            </li>
+            <li>
+                <a href="downloads.jsf" title="Downloads">Downloads</a>
+            </li>
+            <li>
+                <a href="calendar.jsf" title="Exam Calendar">Exam Calendar</a>
+            </li>
+            <li>
+                <a href="services.jsf" title="Services">Services</a>
+            </li>
+            <li>
+                <a href="resultsreleasedexams.jsf" title="Results Released Exams">Results Released Exams</a>
+            </li>
+            <li>
+                <a href="applicationscalledexams.jsf" title="Applications Called Exams">Applications Called Exams</a>
+            </li>
+            <!-- &lt;li&gt;&lt;a href=&quot;message.jsf&quot; title=&quot;Message&quot;&gt;&lt;h:outputText
+					value=&quot;Message&quot; escape=&quot;false&quot; /&gt;&lt;/a&gt;&lt;/li&gt; -->
+            <li>
+                <a href="procurement_notices.jsf" title="Procurement Notices">Procurement Notices</a>
+            </li>
+            <li>
+                <a href="result.html" title="Previous Results" class="Bor-Last">Previous Results</a>
+            </li>
+            <li>
+                <a href="gallery.jsf" title="Gallery">Gallery</a>
+            </li>
+            <li>
+                <a href="contact.jsf" title="Contact Us" class="last">Contact Us</a>
+            </li>
+            <li style="height: 35px;border-bottom: 0 !important;"></li>
+            <li>
+                <a style="border: 0 !important;" href="tellexams.jsf" title="Tell Exams" class="last">
+                    <img src="http://www.doenets.lk/exam/images/tell-exams.png" width="165" height="40" alt="Tell Exams" title="Tell Exams" />
+
+                    <!-- &lt;h:outputText
+					value=&quot;Tell Exams&quot; escape=&quot;false&quot; /&gt; -->
+                </a>
+            </li>
+            <!-- &lt;li&gt;&lt;a target=&quot;_blank&quot; style=&quot;border: 0 !important;&quot; href=&quot;http://www.results.exams.gov.lk/&quot; title=&quot;Other Exams&quot; class=&quot;last&quot;&gt;
+		&lt;img src=&quot;http://www.doenets.lk/exam/images/other-exams.png&quot; width=&quot;165&quot; height=&quot;40&quot;
+			alt=&quot;Other Exams&quot; title=&quot;Other Exams&quot; /&gt;&lt;/a&gt;&lt;/li&gt; -->
+
+
+            <li>
+                <a target="_blank" style="border: 0 !important;" href="https://eservices.exams.gov.lk/certificates/" title="Other Exams"
+                    class="last">
+                    <img src="http://www.doenets.lk/exam/images/online-certificates.png" width="165" height="40" alt="Online Certificates" title="Online Certificates"
+                    />
+                </a>
+            </li>
+
+            <li>
+                <a target="_blank" style="border: 0 !important;" href="https://play.google.com/store/apps/details?id=doenets.inovaitsys.lk.doenets"
+                    title="Android App" class="last">
+                    <img src="http://www.doenets.lk/exam/images/android1.png" width="165" height="40" alt="Android App" title="Android App" />
+                </a>
+            </li>
+            <li>
+                <a target="_blank" style="border: 0 !important;" href="https://itunes.apple.com/us/app/doenets/id1214992538?ls=1&amp;mt=8"
+                    title="Android App" class="last">
+                    <img src="http://www.doenets.lk/exam/images/apple.png" width="165" height="40" alt="Android App" title="Android App" />
+                </a>
+            </li>
+
+
+
+        </ul>
+    </div>
+
+    <div role="main" class="main">
+        <div id="Doenet">
+
+            <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+            <!--[if lt IE 9]&gt;
+  &lt;script src=&quot;http://html5shim.googlecode.com/svn/trunk/html5.js&quot;&gt;&lt;/script&gt;
+&lt;![endif]-->
+            <title>Department of Examinations - Sri Lanka</title>
+            <meta name="viewport" content="width=device-width, initial-scale=1" />
+            <link rel="shortcut icon" href="http://www.doenets.lk/exam/icons/favicon.ico" />
+
+
+            <link rel="stylesheet" href="http://www.doenets.lk/exam/css/change.css" type="text/css" />
+
+            <link rel="stylesheet" href="http://www.doenets.lk/exam/slider_master/css/bjqs.css" type="text/css" />
+            <link rel="stylesheet" href="http://www.doenets.lk/exam/slider_master/css/demo.css?V=6" type="text/css" />
+
+            <script type="text/javascript" src="http://www.doenets.lk/exam/js/jquery.min.js"></script>
+            <script type="text/javascript" src="http://www.doenets.lk/exam/js/jquery-1.7.1.min.js"></script>
+
+            <script type="text/javascript" src="http://www.doenets.lk/exam/js/pules/jquery.pulsate.js"></script>
+
+
+            <!-- &lt;script src=&quot;http://code.jquery.com/jquery-1.7.1.min.js&quot;&gt;&lt;/script&gt; -->
+            <script type="text/javascript" src="http://www.doenets.lk/exam/slider_master/js/bjqs-1.3.min.js"></script>
+
+
+            <header>
+
+
+                <div style="float: left; text-align:left; padding: 10px; ">
+
+
+                    <img src="examLogText_para.png" style="height: 100px;" alt="Department of Examinations" title="Department of Examinations"
+                    />
+
+                </div>
+
+                <div class="Call-Us">
+                    <div class="phoneicon"></div>
+                    <p>
+                        <strong>Call</strong>
+                        <br />Us on
+                    </p>
+                    <a class="PhoneNum">1911</a>
+                </div>
+                <div style="clear: both;"></div>
+            </header>
+            <!-- 	&lt;ui:include src=&quot;common/header_below.xhtml&quot;&gt;&lt;/ui:include&gt; -->
+            <div id="Content">
+                <div id="Left-Col">
+
+                    <section>
+                        <h2>View Previous Results</h2>
+                        <p class="News-list">
+                            <form id="result">
+                                <div class="form-group">
+                                    <label for="formGroupExampleInput">Select year</label>
+                                    <select class="form-control" id="year">
+                                        <option value="" selected disabled>Please select</option>
+                                        <option>2013</option>
+                                        <option>2014</option>
+                                        <option>2015</option>
+                                        <option>2016</option>
+                                        <option>2017</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="formGroupExampleInput">Exam Type</label>
+                                    <select class="form-control" id="exam">
+                                        <option value="" selected disabled>Please select</option>
+                                        <option>Grade 5 Examination</option>
+                                        <option>G.C.E. (O/L) Examination</option>
+                                        <option>G.C.E. (A/L) Examination</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="formGroupExampleInput2">Index Number</label>
+                                    <input type="text" class="form-control" id="index" placeholder="Index Number" onkeypress='return event.charCode >= 48 && event.charCode <= 57'>
+                                </div>
+                                <button type="button" class="btn btn-primary btn-lg" onclick="GenerateTable()">Submit</button>
+                                <button type="button" class="btn btn-default btn-lg" onclick="reset()">Reset</button>
+
+                            </form>
+                            <br>
+                            <br>
+                            <br>
+                            <div id="one" align="center"></div>
+
+                    </section>
+
+                </div>
+
+
+                <script type="text/javascript" src="http://www.doenets.lk/exam/js/win_popup.js"></script>
+
+                <script type="text/javascript">
+
+                    /////////////////////////////
+                    function GenerateTable() {
+
+                        var year = document.getElementById("year").value;
+                        var exam = document.getElementById("exam").value;
+                        var index = document.getElementById("index").value;
+
+                        if (index == "") {
+                            alert("index null")
+                        }
+                        else if (year == "") {
+                            alert("Year null")
+                        }
+                        else if (exam == "") {
+                            alert("Exam Type null")
+                        }
+                        else {
+
+                            if(index=="12345"&&year=="2015"&&exam=="G.C.E. (A/L) Examination")
+                            {
+
+                            //Build an array containing Customer records.
+                            var customers = new Array();
+                            customers.push(["Subject", "Grade"]);
+                            customers.push(["Combined mathematics", "B"]);
+                            customers.push(["ICT", "C"]);
+                            customers.push(["Physics", "C"]);
+                            
+
+                            //Create a HTML Table element.
+                            var table = document.createElement("TABLE");
+                            table.border = "1";
+                            table.setAttribute('class','table table-bordered')
+
+                            //Get the count of columns.
+                            var columnCount = customers[0].length;
+
+                            //Add the header row.
+                            var row = table.insertRow(-1);
+                            for (var i = 0; i < columnCount; i++) {
+                                var headerCell = document.createElement("th");
+                                headerCell.innerHTML = customers[0][i];
+                                row.appendChild(headerCell);
+                            }
+
+                            //Add the data rows.
+                            for (var i = 1; i < customers.length; i++) {
+                                row = table.insertRow(-1);
+                                for (var j = 0; j < columnCount; j++) {
+                                    var cell = row.insertCell(-1);
+                                    cell.innerHTML = customers[i][j];
+                                }
+                            }
+                            var button = document.createElement('input');
+                            // SET INPUT ATTRIBUTE 'type' AND 'value'.
+                            button.setAttribute('type', 'button');
+                            button.setAttribute('value', 'Request Results Sheet')
+                            button.setAttribute('class','btn btn-primary btn-lg')
+                            // ADD THE BUTTON's 'onclick' EVENT.
+                            button.setAttribute('onclick', 'openrequest()');
+
+                            var dvTable = document.getElementById("one");
+                            dvTable.innerHTML = "";
+                            dvTable.appendChild(table);
+                            dvTable.appendChild(button);
+                        }
+                        else{
+                            alert("Match not found")
+                        }
+                        }
+                    }
+
+                    function openrequest() {
+                        parent.location = 'request.html';
+                    }
+                    /////////////////////////////
+                    var i = 1, timer;
+                    var j = 1, timerNew;
+                    var arBlink = new Array('blink1', 'git');
+                    window.onload = function () {
+                        timer = setInterval('blink()', 400);
+                        timerNew = setInterval('blinkNew()', 200);
+
+                    }
+                    function blink() {
+                        if (i == 1) {
+                            for (b in arBlink) {
+                                document.getElementById(arBlink[0]).style.backgroundColor = '#1C76D2';
+
+                            }
+
+                        } else {
+                            for (b in arBlink)
+                                document.getElementById(arBlink[0]).style.backgroundColor = '#4396EA';
+                        }
+                        if (i == 1) i = 0; else i = 1;
+                    }
+
+                    function blinkNew() {
+                        if (j == 1) {
+                            for (b in arBlink) {
+                                document.getElementById(arBlink[1]).style.backgroundColor = '#C2D69B';
+
+                            }
+
+                        } else {
+                            for (b in arBlink)
+                                document.getElementById(arBlink[1]).style.backgroundColor = '#809C48';
+                        }
+                        if (j == 1) j = 0; else j = 1;
+                    }
+
+                    function reset() {
+                        document.getElementById("result").reset();
+
+                    }
+                </script>
+
+                <div id="Right-Col">
+
+
+                    <div style="padding-bottom: 5px;" class="Ash-Box">
+                        <form id="ovform" name="ovform" method="post" action="/exam/calendar.jsf" enctype="application/x-www-form-urlencoded">
+                            <input type="hidden" name="ovform" value="ovform" />
+                            <h2 id="blink1">Grade 5 Examination 2017</h2>
+                            <p>Enter your Index Number</p>
+                            <!-- &lt;h:inputText style=&quot;width:55%;&quot; value=&quot;&quot; /&gt;&lt;h:button style=&quot;width:30%&quot; value=&quot;Submit&quot;&gt;&lt;/h:button&gt; -->
+                            <input id="ovform:GVExamination" type="text" name="ovform:GVExamination" maxlength="10" size="19"
+                                style="width:55%;" />
+                            <input id="ovform:gvbutton" type="submit" name="ovform:gvbutton" value="Submit" style="width:30%"
+                                onclick="openWindowGv();return false;" />
+                            <br />
+                            <div style="color:red;text-align:left;margin-left:7%;">
+                                <span id="ovform:GVValidationMessage"></span>
+                            </div>
+                            <input type="hidden" name="javax.faces.ViewState" id="j_id1:javax.faces.ViewState:0" value="8140273517392828972:-1537999762586629948"
+                                autocomplete="off" />
+                        </form>
+                    </div>
+
+
+
+                    <div style="padding-bottom: 5px;" class="Ash-Box">
+                        <form id="olform" name="olform" method="post" action="/exam/calendar.jsf" enctype="application/x-www-form-urlencoded">
+                            <input type="hidden" name="olform" value="olform" />
+                            <h2>G.C.E. (O/L) Examination 2016
+                                <br>(After Re-Scrutiny)</h2>
+                            <p>Enter your Index Number</p>
+                            <input id="olform:OLExamination" type="text" name="olform:OLExamination"
+                                maxlength="10" size="19" style="width:55%;" />
+                            <input id="olform:olbutton" type="submit" name="olform:olbutton" value="Submit" style="width:30%"
+                                onclick="openWindowOl();return false;" />
+                            <br />
+                            <div style="color:red;text-align:left;margin-left:7%;">
+                                <span id="olform:OlValidationMessage"></span>
+                            </div>
+                            <input type="hidden" name="javax.faces.ViewState" id="j_id1:javax.faces.ViewState:0" value="8140273517392828972:-1537999762586629948"
+                                autocomplete="off" />
+                        </form>
+                    </div>
+
+
+                    <div style="padding-bottom: 5px;" class="Ash-Box">
+                        <form id="alform" name="alform" method="post" action="/exam/calendar.jsf" enctype="application/x-www-form-urlencoded">
+                            <input type="hidden" name="alform" value="alform" />
+                            <h2>G.C.E. (A/L) Examination 2016
+                                <br>(After Re-Scrutiny)</h2>
+                            <p>Enter your Index Number</p>
+                            <!--					&lt;div style=&quot;color:red; font-size: 18px&quot;&gt;Await..&lt;/div&gt; -->
+                            <input id="alform:ALExamination" type="text" name="alform:ALExamination" maxlength="10" size="19"
+                                style="width:55%;" />
+                            <input id="alform:albutton" type="submit" name="alform:albutton" value="Submit" style="width:30%"
+                                onclick="openWindowAl();return false;" />
+                            <br />
+                            <div style="color:red;text-align:left;margin-left:7%;">
+                                <span id="alform:AlValidationMessage"></span>
+                            </div>
+                            <input type="hidden" name="javax.faces.ViewState" id="j_id1:javax.faces.ViewState:0" value="8140273517392828972:-1537999762586629948"
+                                autocomplete="off" />
+                        </form>
+                    </div>
+
+
+
+
+
+                    <!-- 		&lt;div id=&quot;other_exam&quot; class=&quot;Ash-Box&quot;&gt;
+				&lt;h:outputText value=&quot;&lt;a  href=&quot;http://www.results.exams.gov.lk/&quot; target=&quot;_blank&quot;&gt;&lt;h2&gt;Other Examination Results&lt;/h2&gt;&lt;/a&gt;&quot;
+					escape=&quot;false&quot; /&gt;
+		&lt;/div&gt; -->
+
+                    <div id="git_results" style="border: 1px solid #4396ea" class="Ash-Box">
+                        <a href="http://www.results.exams.gov.lk/viewresultsforexam.htm" target="_blank" id="git">
+                            <h2>GIT Examination - 2016</h2>
+                        </a>
+                    </div>
+
+                    <div style="padding-bottom: 5px;border: 1px solid #ed1c24;" class="Ash-Box">
+                        <h2 style="background: #ed1c24;">Get grade 5 scholarship examination results on your Dialog Mobile</h2>
+                        <p style="line-height: 100%;">Type EXAMS &lt;SPACE&gt; INDEX NUMBER &amp; send to 7777</p>
+                        <p style="font-size:12px;line-height: 0;">RS. 2/- plus tax per message</p>
+                    </div>
+
+
+                    <div style="padding-bottom: 5px;border: 1px solid #cc0000;" class="Ash-Box">
+                        <h2 style="background: #cc0000;">Results anywhere, anytime !
+                            <br/>Download your mobile app here</h2>
+                        <div class="rightEx">
+                            <div class="div1">
+                                <a target="_blank" href="https://play.google.com/store/apps/details?id=doenets.inovaitsys.lk.doenets&amp;hl=en#details-reviews">
+                                    <img src="http://www.doenets.lk/exam/images/android.png" alt="Android App" title="Android App"
+                                    />
+                                </a>
+                            </div>
+                            <div class="div2">
+                                <a target="_blank" href="https://itunes.apple.com/us/app/doenets/id1214992538?ls=1&amp;mt=8">
+                                    <img src="http://www.doenets.lk/exam/images/apple.png" alt="Apple App" title="Apple App"
+                                    />
+                                </a>
+                            </div>
+                            <div style="clear:both;"></div>
+                        </div>
+                    </div>
+                    <!-- 
+		&lt;a href=&quot;#&quot; class=&quot;Notice&quot;&gt;&lt;h:outputText
+				value=&quot;???app.right.examination.gce.ol.mobile.dialog???&quot;
+				escape=&quot;false&quot; /&gt;&lt;/a&gt; -->
+
+                </div>
+
+            </div>
+
+            <div style="width: 100%">
+                <footer>
+                    <ul>
+                        <li>
+                            <a href="index.jsf" title="Home">Home</a>
+                        </li>
+                        <li>
+                            <a href="downloads.jsf" title="Downloads">Downloads </a>
+                        </li>
+                        <li>
+                            <a href="calendar.jsf" title="Exam Calendar">Exam Calendar</a>
+                        </li>
+                        <li>
+                            <a href="services.jsf" title="Services">Services</a>
+                        </li>
+                        <!-- &lt;li&gt;&lt;a href=&quot;message.jsf&quot; title=&quot;Message&quot;&gt;&lt;h:outputText
+						value=&quot;Message&quot; escape=&quot;false&quot; /&gt;&lt;/a&gt;&lt;/li&gt; -->
+                        <li>
+                            <a href="procurement_notices.jsf" title="Procurement Notices">Procurement Notices</a>
+                        </li>
+                        <li>
+                            <a href="gallery.jsf" title="Gallery">Gallery</a>
+                        </li>
+                        <li>
+                            <a href="contact.jsf" title="Contact Us" class="Bor-Last">Contact Us</a>
+                        </li>
+                    </ul>
+                    <!-- &lt;p class=&quot;Copyright&quot;&gt;
+			&lt;h:outputText value=&quot;Copyright &amp;copy; 2005-2017 - Department of Examinations - Sri Lanka&quot; escape=&quot;false&quot; /&gt;
+		&lt;/p&gt; -->
+                    <!-- &lt;div class=&quot;Powered-Dialog&quot;&gt;
+			&lt;h:outputText value=&quot;Powered By&quot; escape=&quot;false&quot; /&gt;
+			&lt;a href=&quot;http://www.dialog.lk/&quot; title=&quot;Dialog Axiata PLC&quot;
+				target=&quot;_blank&quot;&gt;&lt;h:outputText
+					value=&quot;Dialog&quot; escape=&quot;false&quot; /&gt;&lt;/a&gt;
+		&lt;/div&gt;
+		 -->
+
+                    <!--div style=&quot;float:right;width:160px&quot;&gt;
+		&lt;h:outputText value=&quot;Powered By&quot; escape=&quot;false&quot; /&gt;
+
+			&lt;a href=&quot;http://www.dialog.lk/&quot; title=&quot;Dialog Axiata PLC&quot;
+				target=&quot;_blank&quot; &gt;&lt;img style=&quot;vertical-align:middle;&quot; src=&quot;images/dialog-logo.png&quot;&gt;&lt;/img&gt;&lt;/a&gt;
+		&lt;/div-->
+                    <div style="clear: both">
+                        <div style="float:left;width:171px">
+                            <div style="float:left;margin-top: 36px;">Developed By
+                            </div>
+                            <div style="float:left;">
+                                <a href="http://www.inovaitsys.com/" title="INOVA IT SYSTEMS" target="_blank">
+                                    <img style="vertical-align:middle;" src="images/inova_logo.png" />
+                                </a>
+                            </div>
+
+                            <div style="clear: both"></div>
+                        </div>
+
+                        <div style="float:right;width:160px">
+                            <div style="float:left;margin-top: 33px;">Powered By
+                            </div>
+                            <div style="float:left;">
+                                <a href="http://www.dialog.lk/" title="Dialog Axiata PLC" target="_blank">
+                                    <img style="vertical-align:middle;" src="images/dialog-logo.png" />
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="text-align:center; clear: both">Copyright &copy; 2005-2017 - Department of Examinations - Sri Lanka
+
+                    </div>
+                    <!-- &lt;div&gt;&lt;div align='center'&gt;&lt;img src='http://www.hit-counts.com/counter.php?t=MTM0MTQ4Mw==' border='0' alt='Free Hit Counter' /&gt;&lt;/div&gt;&lt;/div&gt; -->
+
+
+                    <!-- &lt;div  id=&quot;statcounter_image&quot; style=&quot;text-align: center;&quot;&gt;&lt;img src=&quot;http://c.statcounter.com/10192199/0/ca4ccaf0/0/&quot;
+alt=&quot;Counter&quot; style=&quot;border:none;&quot; /&gt;&lt;/div&gt; -->
+
+                </footer>
+            </div>
+
+            <script type="text/javascript" src="http://www.doenets.lk/exam/js/googleAnalytics.js"></script>
+        </div>
+    </div>
+
+    <script>
+                    var navigation = responsiveNav("foo", { customToggle: ".nav-toggle" });
+    </script>
+    <script>
+                    $(function () {
+                        $("#pulse").pulsate({
+                            glow: false,
+                            reach: 10,
+                            speed: 500
+                        });
+
+
+                    });
+    </script>
+</body>
+
+<!-- END BODY -->
+
+</html>
